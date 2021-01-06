@@ -1,10 +1,12 @@
 package routers
 
 import (
-	"github.com/gorilla/mux"
 	"go-rest-mongodb/controllers"
+
+	"github.com/gorilla/mux"
 )
 
+// AddPlacesRouter godoc
 func AddPlacesRouter(r *mux.Router) *mux.Router {
 	s := r.PathPrefix("/places").Subrouter()
 	s.HandleFunc("", controllers.GetAllPlaces).Methods("GET")
@@ -12,5 +14,5 @@ func AddPlacesRouter(r *mux.Router) *mux.Router {
 	s.HandleFunc("", controllers.CreatePlace).Methods("POST")
 	s.HandleFunc("", controllers.UpdatePlace).Methods("PUT")
 	s.HandleFunc("/{id}", controllers.DeletePlace).Methods("DELETE")
-	return s;
+	return s
 }

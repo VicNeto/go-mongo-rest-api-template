@@ -3,7 +3,7 @@ package repository
 import (
 	"context"
 	"fmt"
-	. "go-rest-mongodb/config"
+	conf "go-rest-mongodb/config"
 	"go-rest-mongodb/models"
 	"log"
 	"time"
@@ -17,7 +17,7 @@ import (
 // PlacesRepository Repository
 type PlacesRepository struct{}
 
-var config Config
+var config conf.Config
 var collection = new(mongo.Collection)
 
 // PlacesCollection Collection
