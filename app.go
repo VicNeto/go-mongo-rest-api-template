@@ -18,7 +18,7 @@ func init() {
 
 func main() {
 	log.SetOutput(os.Stdout)
-	logFormatter := new(LogFormatter)
+	logFormatter := new(conf.LogFormatter)
 	logFormatter.TimestampFormat = "2006-01-02 15:04:05"
 	logFormatter.LevelDesc = []string{"PANIC", "FATAL", "ERROR", "WARN", "INFO", "DEBUG", "TRACE"}
 	log.SetFormatter(logFormatter)

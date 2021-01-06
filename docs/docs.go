@@ -54,6 +54,44 @@ var doc = `{
                         }
                     }
                 }
+            },
+            "post": {
+                "description": "post request example",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "places"
+                ],
+                "summary": "post request example",
+                "parameters": [
+                    {
+                        "description": "Add place",
+                        "name": "place",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Place"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "fail",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
             }
         },
         "/api/places/{id}": {
@@ -78,23 +116,6 @@ var doc = `{
                     }
                 }
             }
-        },
-        "/ping": {
-            "get": {
-                "description": "check connection",
-                "produces": [
-                    "application/json"
-                ],
-                "summary": "Ping",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/routers.PingModel"
-                        }
-                    }
-                }
-            }
         }
     },
     "definitions": {
@@ -108,14 +129,6 @@ var doc = `{
                     "type": "string"
                 },
                 "title": {
-                    "type": "string"
-                }
-            }
-        },
-        "routers.PingModel": {
-            "type": "object",
-            "properties": {
-                "hello": {
                     "type": "string"
                 }
             }

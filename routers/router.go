@@ -6,6 +6,8 @@ import (
 	"github.com/gorilla/mux"
 	log "github.com/sirupsen/logrus"
 
+	_ "go-rest-mongodb/docs"
+
 	httpSwagger "github.com/swaggo/http-swagger"
 )
 

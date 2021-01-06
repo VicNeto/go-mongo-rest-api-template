@@ -43,6 +43,16 @@ func GetPlaceById(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "Not implemented!")
 }
 
+// CreatePlace godoc
+// @Summary post request example
+// @Description post request example
+// @Tags places
+// @Accept json
+// @Produce json
+// @Param place body models.Place true "Add place"
+// @Success 200 {string} string "success"
+// @Failure 500 {string} string "fail"
+// @Router /api/places [post]
 func CreatePlace(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 	var place models.Place
